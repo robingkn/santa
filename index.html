@@ -18,7 +18,8 @@
             background: #050b1a;
             font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
             user-select: none;
-            touch-action: none;
+            touch-action: manipulation;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
         }
 
         #game-container {
@@ -38,6 +39,21 @@
             max-width: 800px;
             max-height: 600px;
             box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Fullscreen: game fills full width and height */
+        #game-container:fullscreen,
+        #game-container:-webkit-full-screen {
+            width: 100%;
+            height: 100%;
+        }
+
+        #game-container:fullscreen #game-wrapper,
+        #game-container:-webkit-full-screen #game-wrapper {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
         }
 
         #game-wrapper canvas,
@@ -67,9 +83,9 @@
 
         #ui {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
+            top: max(12px, env(safe-area-inset-top));
+            left: max(12px, env(safe-area-inset-left));
+            right: max(12px, env(safe-area-inset-right));
             color: #fff;
             pointer-events: none;
             text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
@@ -80,9 +96,9 @@
         }
 
         .stat {
-            font-size: 28px;
+            font-size: clamp(16px, 4vmin, 28px);
             font-weight: 800;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
             letter-spacing: 1px;
             font-family: Georgia, 'Times New Roman', serif;
         }
@@ -106,13 +122,13 @@
         }
 
         .meter-container {
-            width: 200px;
-            height: 18px;
+            width: min(200px, 45vw);
+            height: clamp(12px, 2.5vmin, 18px);
             background: rgba(0, 0, 0, 0.6);
-            border: 3px solid rgba(255, 255, 255, 0.4);
-            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
             overflow: hidden;
-            margin-top: 5px;
+            margin-top: 2px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -142,8 +158,8 @@
         }
 
         .heart {
-            width: 25px;
-            height: 25px;
+            width: clamp(18px, 4vmin, 25px);
+            height: clamp(18px, 4vmin, 25px);
             background: #d42426;
             transform: rotate(45deg);
             position: relative;
@@ -159,19 +175,19 @@
         .heart::before,
         .heart::after {
             content: '';
-            width: 25px;
-            height: 25px;
+            width: clamp(18px, 4vmin, 25px);
+            height: clamp(18px, 4vmin, 25px);
             background: #d42426;
             border-radius: 50%;
             position: absolute;
         }
 
         .heart::before {
-            left: -12.5px;
+            left: -50%;
         }
 
         .heart::after {
-            top: -12.5px;
+            top: -50%;
         }
 
         .heart.lost {
@@ -186,7 +202,7 @@
         }
 
         #timer-display {
-            font-size: 32px;
+            font-size: clamp(18px, 4vmin, 32px);
             font-weight: 900;
             color: #00d2ff;
             text-shadow: 0 0 10px #00d2ff;
@@ -231,8 +247,8 @@
         #start-screen h1,
         #victory-screen h1,
         #game-over-screen h1 {
-            font-size: 72px;
-            margin-bottom: 20px;
+            font-size: clamp(32px, 10vmin, 72px);
+            margin-bottom: clamp(10px, 2vmin, 20px);
             color: #ffd700;
             text-shadow: 0 0 30px #ffd700, 0 0 60px #ff6b00;
             font-family: Georgia, 'Times New Roman', serif;
@@ -245,22 +261,22 @@
         }
 
         .subtitle {
-            font-size: 24px;
-            margin-bottom: 30px;
+            font-size: clamp(16px, 3.5vmin, 24px);
+            margin-bottom: clamp(16px, 3vmin, 30px);
             color: #00d2ff;
             font-weight: 600;
         }
 
         .final-stats {
-            font-size: 28px;
-            margin: 20px 0;
+            font-size: clamp(18px, 3.5vmin, 28px);
+            margin: clamp(12px, 2vmin, 20px) 0;
             line-height: 1.8;
         }
 
         .final-stats strong {
             color: #00d2ff;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 32px;
+            font-size: clamp(20px, 4vmin, 32px);
         }
 
         .button-container {
@@ -270,17 +286,18 @@
         }
 
         .game-btn {
-            padding: 18px 40px;
+            padding: clamp(12px, 2vmin, 18px) clamp(24px, 4vmin, 40px);
             background: linear-gradient(135deg, #d42426, #a01618);
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 24px;
+            font-size: clamp(18px, 3.5vmin, 24px);
             cursor: pointer;
             font-family: Georgia, 'Times New Roman', serif;
             box-shadow: 0 6px 20px rgba(212, 36, 38, 0.6);
             transition: all 0.3s;
             pointer-events: auto;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .game-btn.secondary {
@@ -303,21 +320,21 @@
 
         #achievements {
             position: absolute;
-            top: 120px;
-            right: 20px;
+            top: min(120px, 22vh);
+            right: max(12px, env(safe-area-inset-right));
             text-align: right;
             pointer-events: none;
         }
 
         .achievement {
             background: rgba(0, 0, 0, 0.8);
-            padding: 12px 20px;
+            padding: clamp(8px, 1.5vmin, 12px) clamp(12px, 2.5vmin, 20px);
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             border: 2px solid #ffd700;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             animation: achievementSlide 0.5s ease-out, achievementFade 3s ease-in 2s forwards;
-            font-size: 18px;
+            font-size: clamp(14px, 2.5vmin, 18px);
             font-weight: 800;
             color: #ffd700;
         }
@@ -333,34 +350,66 @@
 
         #controls-hint {
             position: absolute;
-            bottom: 20px;
+            bottom: max(12px, env(safe-area-inset-bottom));
             left: 50%;
             transform: translateX(-50%);
             color: rgba(255, 255, 255, 0.8);
-            font-size: 15px;
+            font-size: clamp(11px, 2.2vmin, 15px);
             text-align: center;
             background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 8px;
             backdrop-filter: blur(5px);
         }
 
+        body.touch-device #controls-hint {
+            display: none;
+        }
+
         #touch-controls {
             position: absolute;
-            bottom: 30px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 40px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 42%;
+            min-height: 160px;
+            max-height: 280px;
+            padding: 0 max(20px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-right));
+            padding-bottom: max(24px, calc(env(safe-area-inset-bottom) + 12px));
             box-sizing: border-box;
             pointer-events: none;
+            display: none;
+            z-index: 20;
+        }
+
+        #touch-controls .touch-zone {
+            pointer-events: auto;
+            display: flex;
+            gap: clamp(12px, 3vmin, 24px);
+            align-items: center;
+        }
+
+        #touch-controls .touch-zone-left {
+            position: absolute;
+            left: max(16px, env(safe-area-inset-left));
+            bottom: max(24px, env(safe-area-inset-bottom));
+        }
+
+        #touch-controls .touch-zone-right {
+            position: absolute;
+            right: max(16px, env(safe-area-inset-right));
+            bottom: max(24px, env(safe-area-inset-bottom));
+            flex-direction: column;
+            gap: clamp(10px, 2vmin, 16px);
         }
 
         .touch-btn {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 3px solid rgba(255, 255, 255, 0.4);
+            width: clamp(56px, 14vmin, 88px);
+            height: clamp(56px, 14vmin, 88px);
+            min-width: 56px;
+            min-height: 56px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 3px solid rgba(255, 255, 255, 0.5);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -368,23 +417,58 @@
             pointer-events: auto;
             color: white;
             font-weight: bold;
-            font-size: 28px;
-            transition: all 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
+            font-size: clamp(22px, 5vmin, 32px);
+            transition: background 0.1s, transform 0.1s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .touch-btn:active {
-            background: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.4);
             transform: scale(0.92);
+        }
+
+        .touch-btn.jump-btn {
+            background: rgba(0, 210, 255, 0.25);
+            border-color: rgba(0, 210, 255, 0.6);
+        }
+
+        #btn-fullscreen {
+            position: absolute;
+            top: max(8px, env(safe-area-inset-top));
+            right: max(8px, env(safe-area-inset-right));
+            width: clamp(36px, 8vmin, 44px);
+            height: clamp(36px, 8vmin, 44px);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: clamp(18px, 4vmin, 22px);
+            cursor: pointer;
+            z-index: 25;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            -webkit-tap-highlight-color: transparent;
+            transition: background 0.2s;
+        }
+
+        #btn-fullscreen:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        #btn-fullscreen:active {
+            transform: scale(0.95);
         }
 
         #combo-display {
             position: absolute;
-            top: 120px;
+            top: min(120px, 22vh);
             left: 50%;
             transform: translateX(-50%);
-            font-size: 56px;
+            font-size: clamp(32px, 8vmin, 56px);
             font-weight: 900;
             color: #ffd700;
             text-shadow: 0 0 30px #ffd700;
@@ -407,9 +491,9 @@
 
         #power-indicator {
             position: absolute;
-            top: 100px;
-            right: 20px;
-            font-size: 18px;
+            top: min(100px, 18vh);
+            right: max(12px, env(safe-area-inset-right));
+            font-size: clamp(14px, 2.2vmin, 18px);
             color: #00d2ff;
             text-shadow: 0 0 10px #00d2ff;
             opacity: 0;
@@ -442,10 +526,10 @@
 
         #jump-indicator {
             position: absolute;
-            bottom: 140px;
+            bottom: min(140px, 28vh);
             left: 50%;
             transform: translateX(-50%);
-            font-size: 20px;
+            font-size: clamp(14px, 2.5vmin, 20px);
             font-weight: 800;
             color: #00d2ff;
             text-shadow: 0 0 10px #00d2ff;
@@ -459,12 +543,12 @@
         }
 
         .instructions {
-            max-width: 600px;
+            max-width: min(600px, 92vw);
             text-align: left;
             background: rgba(0, 0, 0, 0.6);
-            padding: 20px 30px;
+            padding: clamp(12px, 2vmin, 20px) clamp(16px, 3vmin, 30px);
             border-radius: 12px;
-            margin: 20px;
+            margin: clamp(10px, 2vmin, 20px);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -472,13 +556,13 @@
             color: #ffd700;
             margin-top: 0;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 28px;
+            font-size: clamp(20px, 4vmin, 28px);
         }
 
         .instructions p {
-            margin: 10px 0;
+            margin: 8px 0;
             line-height: 1.6;
-            font-size: 16px;
+            font-size: clamp(13px, 2.2vmin, 16px);
         }
 
         .icon-legend {
@@ -564,16 +648,19 @@
             ← → : Move | ↑ : Jump (x2) | X: Snowball | C: Magic Power
         </div>
 
-        <!-- Touch Controls -->
-        <div id="touch-controls" style="display: none;">
-            <div style="display: flex; gap: 20px;">
-                <div id="btn-left" class="touch-btn">⬅️</div>
-                <div id="btn-right" class="touch-btn">➡️</div>
+        <!-- Fullscreen (tap/click, no extra key) -->
+        <button type="button" id="btn-fullscreen" tabindex="-1" title="Full screen" aria-label="Toggle full screen">⛶</button>
+
+        <!-- Touch Controls: left = move, right = jump / shoot / magic -->
+        <div id="touch-controls">
+            <div class="touch-zone touch-zone-left">
+                <div id="btn-left" class="touch-btn" aria-label="Move left">←</div>
+                <div id="btn-right" class="touch-btn" aria-label="Move right">→</div>
             </div>
-            <div style="display: flex; gap: 20px; align-items: center;">
-                <div id="btn-shoot" class="touch-btn">❄️</div>
-                <div id="btn-magic" class="touch-btn" title="Magic (when bar full)">✨</div>
-                <div id="btn-jump" class="touch-btn">⬆️</div>
+            <div class="touch-zone touch-zone-right">
+                <div id="btn-jump" class="touch-btn jump-btn" aria-label="Jump">↑</div>
+                <div id="btn-shoot" class="touch-btn" aria-label="Snowball">❄</div>
+                <div id="btn-magic" class="touch-btn" aria-label="Magic">✨</div>
             </div>
         </div>
 
@@ -1155,7 +1242,8 @@
                 });
 
                 if ('ontouchstart' in window) {
-                    document.getElementById('touch-controls').style.display = 'flex';
+                    document.body.classList.add('touch-device');
+                    document.getElementById('touch-controls').style.display = 'block';
                     const b = (id, k) => {
                         const btn = document.getElementById(id); 
                         btn.addEventListener('touchstart', (e) => { 
@@ -1874,6 +1962,42 @@
         let game;
         window.onload = () => {
             game = new Game();
+
+            // Fullscreen: full game (container) goes fullscreen; game area fills viewport
+            const fsBtn = document.getElementById('btn-fullscreen');
+            const gameContainer = document.getElementById('game-container');
+            const enterFS = () => {
+                try {
+                    if (gameContainer.requestFullscreen) gameContainer.requestFullscreen();
+                    else if (gameContainer.webkitRequestFullscreen) gameContainer.webkitRequestFullscreen();
+                    else if (gameContainer.msRequestFullscreen) gameContainer.msRequestFullscreen();
+                } catch (_) {}
+            };
+            const exitFS = () => {
+                try {
+                    if (document.exitFullscreen) document.exitFullscreen();
+                    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+                    else if (document.msExitFullscreen) document.msExitFullscreen();
+                } catch (_) {}
+            };
+            const updateFsLabel = () => {
+                const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+                fsBtn.textContent = isFs ? '⊟' : '⛶';
+                fsBtn.title = isFs ? 'Exit full screen' : 'Full screen';
+                fsBtn.setAttribute('aria-label', isFs ? 'Exit full screen' : 'Full screen');
+            };
+            fsBtn.addEventListener('click', () => {
+                const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+                if (isFs) exitFS(); else enterFS();
+            });
+            // Prevent Space/Enter from toggling fullscreen so Space stays for jump
+            fsBtn.addEventListener('keydown', (e) => {
+                if (e.code === 'Space' || e.key === ' ') e.preventDefault();
+                if (e.code === 'Enter' || e.key === 'Enter') e.preventDefault();
+            });
+            document.addEventListener('fullscreenchange', updateFsLabel);
+            document.addEventListener('webkitfullscreenchange', updateFsLabel);
+            document.addEventListener('MSFullscreenChange', updateFsLabel);
         };
     </script>
 </body>
