@@ -1438,6 +1438,7 @@
                 if (this.invincible > 0) return false;
                 if (this.hasShield > 0) {
                     this.hasShield = 0;
+                    this.invincible = 60; // Add 1 second of invincibility
                     audio.playSfx('power');
                     return false;
                 }
