@@ -113,8 +113,16 @@
         }
 
         @keyframes scorePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.4); color: #ffd700; }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.4);
+                color: #ffd700;
+            }
         }
 
         #level-info {
@@ -132,24 +140,11 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        #magic-bar {
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
-            box-shadow: 0 0 15px #00d2ff;
-            transition: width 0.3s;
-            position: relative;
-        }
 
-        #magic-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
-        }
+
+
+
+
 
         #health-container {
             display: flex;
@@ -163,13 +158,20 @@
             background: #d42426;
             transform: rotate(45deg);
             position: relative;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             animation: heartBeat 1.5s ease-in-out infinite;
         }
 
         @keyframes heartBeat {
-            0%, 100% { transform: rotate(45deg) scale(1); }
-            50% { transform: rotate(45deg) scale(1.05); }
+
+            0%,
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(45deg) scale(1.05);
+            }
         }
 
         .heart::before,
@@ -216,8 +218,15 @@
         }
 
         @keyframes timerPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         #victory-screen,
@@ -240,8 +249,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         #start-screen h1,
@@ -256,8 +270,15 @@
         }
 
         @keyframes glow {
-            0%, 100% { text-shadow: 0 0 30px #ffd700, 0 0 60px #ff6b00; }
-            50% { text-shadow: 0 0 50px #ffd700, 0 0 100px #ff6b00; }
+
+            0%,
+            100% {
+                text-shadow: 0 0 30px #ffd700, 0 0 60px #ff6b00;
+            }
+
+            50% {
+                text-shadow: 0 0 50px #ffd700, 0 0 100px #ff6b00;
+            }
         }
 
         .subtitle {
@@ -340,12 +361,22 @@
         }
 
         @keyframes achievementSlide {
-            from { transform: translateX(400px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         @keyframes achievementFade {
-            to { opacity: 0; transform: translateX(400px); }
+            to {
+                opacity: 0;
+                transform: translateX(400px);
+            }
         }
 
         #controls-hint {
@@ -483,34 +514,28 @@
         }
 
         @keyframes comboShow {
-            0% { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.5); }
-            30% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1.3); }
-            70% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
-            100% { opacity: 0; transform: translateX(-50%) translateY(-30px) scale(0.8); }
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px) scale(0.5);
+            }
+
+            30% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) scale(1.3);
+            }
+
+            70% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-30px) scale(0.8);
+            }
         }
 
-        #power-indicator {
-            position: absolute;
-            top: min(100px, 18vh);
-            right: max(12px, env(safe-area-inset-right));
-            font-size: clamp(14px, 2.2vmin, 18px);
-            color: #00d2ff;
-            text-shadow: 0 0 10px #00d2ff;
-            opacity: 0;
-            pointer-events: none;
-            font-weight: 800;
-            transition: opacity 0.3s;
-        }
 
-        #power-indicator.show {
-            opacity: 1;
-            animation: powerPulse 1s ease-in-out infinite;
-        }
-
-        @keyframes powerPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
 
         .powerup-icon {
             position: absolute;
@@ -520,8 +545,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         #jump-indicator {
@@ -602,15 +634,17 @@
             <div class="subtitle">Santa's Epic Christmas Quest</div>
             <div class="instructions">
                 <h3>How to Play</h3>
-                <p><strong>← →</strong> Move | <strong>↑</strong> Jump (Double Jump available!) | <strong>X</strong> Snowball Attack</p>
-                <p><strong>C</strong> Activate Magic Power (when bar is full)</p>
+                <p><strong>← →</strong> Move | <strong>↑</strong> Jump (Double Jump!) | <strong>X</strong> Snowball</p>
+                <p><strong>Gifts & Stars:</strong> Collect ⭐ or 🎁 to increase your score!</p>
                 <p><br></p>
-                <p><span class="icon-legend">🎁 = 100 pts</span> <span class="icon-legend">⭐ = +Magic</span> <span class="icon-legend">🔔 = 500 pts</span></p>
-                <p><span class="icon-legend">⚡ Speed Boost</span> <span class="icon-legend">🛡️ Shield</span> <span class="icon-legend">❄️ Freeze Time</span></p>
+                <p><span class="icon-legend">🎁 = 100 pts</span> <span class="icon-legend">⭐ = 500 pts</span> <span
+                        class="icon-legend">🔔 = 500 pts</span></p>
+                <p><span class="icon-legend">⚡ Speed Boost</span> <span class="icon-legend">🛡️ Shield</span> <span
+                        class="icon-legend">❄️ Freeze Time</span></p>
                 <p><br></p>
                 <p>💡 <strong>Combos:</strong> Collect items quickly for multipliers!<br>
-                💡 <strong>Ice Platforms:</strong> Watch out - they're slippery!<br>
-                💡 <strong>Beat the clock:</strong> Faster completions = bonus points!</p>
+                    💡 <strong>Ice Platforms:</strong> Watch out - they're slippery!<br>
+                    💡 <strong>Beat the clock:</strong> Faster completions = bonus points!</p>
             </div>
             <div class="button-container">
                 <button class="game-btn" onclick="game.startGame()">START ADVENTURE</button>
@@ -621,10 +655,7 @@
         <div id="ui">
             <div>
                 <div class="stat">SCORE: <span id="score">0</span></div>
-                <div class="stat" style="font-size: 18px;">MAGIC</div>
-                <div class="meter-container">
-                    <div id="magic-bar"></div>
-                </div>
+
                 <div id="health-container">
                     <div class="heart"></div>
                     <div class="heart"></div>
@@ -640,18 +671,19 @@
 
         <!-- Floating indicators -->
         <div id="combo-display">COMBO x3!</div>
-        <div id="power-indicator">✨ MAGIC BOOST ACTIVE ✨</div>
+
         <div id="jump-indicator">DOUBLE JUMP READY!</div>
         <div id="achievements"></div>
 
         <div id="controls-hint">
-            ← → : Move | ↑ : Jump (x2) | X: Snowball | C: Magic Power
+            ← → : Move | ↑ : Jump (x2) | X: Snowball
         </div>
 
         <!-- Fullscreen (tap/click, no extra key) -->
-        <button type="button" id="btn-fullscreen" tabindex="-1" title="Full screen" aria-label="Toggle full screen">⛶</button>
+        <button type="button" id="btn-fullscreen" tabindex="-1" title="Full screen"
+            aria-label="Toggle full screen">⛶</button>
 
-        <!-- Touch Controls: left = move, right = jump / shoot / magic -->
+        <!-- Touch Controls: left = move, right = jump / shoot -->
         <div id="touch-controls">
             <div class="touch-zone touch-zone-left">
                 <div id="btn-left" class="touch-btn" aria-label="Move left">←</div>
@@ -660,7 +692,6 @@
             <div class="touch-zone touch-zone-right">
                 <div id="btn-jump" class="touch-btn jump-btn" aria-label="Jump">↑</div>
                 <div id="btn-shoot" class="touch-btn" aria-label="Snowball">❄</div>
-                <div id="btn-magic" class="touch-btn" aria-label="Magic">✨</div>
             </div>
         </div>
 
@@ -732,7 +763,7 @@
                     o.type = 'sine'; o.frequency.setValueAtTime(600, n); o.frequency.exponentialRampToValueAtTime(1200, n + 0.2);
                     g.gain.setValueAtTime(0.15, n); g.gain.exponentialRampToValueAtTime(0.01, n + 0.5); o.start(); o.stop(n + 0.5);
                 } else if (type === 'powerup') {
-                    o.type = 'triangle'; 
+                    o.type = 'triangle';
                     [400, 600, 800].forEach((f, i) => {
                         o.frequency.setValueAtTime(f, n + i * 0.05);
                     });
@@ -793,10 +824,9 @@
                         maxLife: 60,
                         type,
                         size: Math.random() * 4 + 2,
-                        color: type === 'magic' ? '#00d2ff' : 
-                               type === 'collect' ? '#ffd700' : 
-                               type === 'speed' ? '#ff6b00' :
-                               type === 'shield' ? '#4caf50' : '#fff'
+                        color: type === 'collect' ? '#ffd700' :
+                            type === 'speed' ? '#ff6b00' :
+                                type === 'shield' ? '#4caf50' : '#fff'
                     });
                 }
             }
@@ -839,9 +869,6 @@
                     'combo_master': { name: '🔥 Combo Master', desc: 'Reach a 5x combo' },
                     'speed_demon': { name: '⚡ Speed Demon', desc: 'Complete a level in under 30 seconds' },
                     'no_damage': { name: '🛡️ Untouchable', desc: 'Complete a level without taking damage' },
-                    'collector': { name: '💎 Master Collector', desc: 'Collect all items in a level' },
-                    'power_user': { name: '✨ Power User', desc: 'Use magic power 3 times in one level' },
-                    'survivor': { name: '❤️ Survivor', desc: 'Complete a level with only 1 heart left' }
                 };
             }
 
@@ -868,13 +895,13 @@
 
         // --- RENDERER ---
         class Renderer {
-            static drawSanta(ctx, x, y, dir, state, animTime, magic, powerActive, hasShield) {
-                ctx.save(); 
-                ctx.translate(x, y); 
+            static drawSanta(ctx, x, y, dir, state, animTime, hasShield) {
+                ctx.save();
+                ctx.translate(x, y);
                 if (dir === -1) ctx.scale(-1, 1);
 
                 const bounce = state === 'walking' ? Math.abs(Math.sin(animTime * 10)) * 5 : 0;
-                ctx.rotate(state === 'walking' ? Math.sin(animTime * 10) * 0.1 : 0); 
+                ctx.rotate(state === 'walking' ? Math.sin(animTime * 10) * 0.1 : 0);
                 ctx.translate(0, -bounce);
 
                 // Shield
@@ -888,83 +915,67 @@
                     ctx.globalAlpha = 1;
                 }
 
-                // Magic Aura
-                if (magic > 50 || powerActive) { 
-                    ctx.shadowBlur = powerActive ? 20 : 12; 
-                    ctx.shadowColor = powerActive ? '#ffd700' : '#00d2ff';
-                }
-
-                // Power aura ring
-                if (powerActive) {
-                    ctx.strokeStyle = '#ffd700';
-                    ctx.lineWidth = 3;
-                    ctx.globalAlpha = 0.5 + Math.sin(animTime * 15) * 0.3;
-                    ctx.beginPath();
-                    ctx.arc(0, -35, 40 + Math.sin(animTime * 10) * 5, 0, Math.PI * 2);
-                    ctx.stroke();
-                    ctx.globalAlpha = 1;
-                }
 
                 // Body
-                ctx.fillStyle = '#d42426'; 
-                ctx.beginPath(); 
-                ctx.ellipse(0, -20, 15, 20, 0, 0, Math.PI * 2); 
+                ctx.fillStyle = '#d42426';
+                ctx.beginPath();
+                ctx.ellipse(0, -20, 15, 20, 0, 0, Math.PI * 2);
                 ctx.fill();
-                
+
                 // Belt
-                ctx.fillStyle = '#111'; 
-                ctx.fillRect(-15, -20, 30, 5); 
-                ctx.fillStyle = '#ffd700'; 
+                ctx.fillStyle = '#111';
+                ctx.fillRect(-15, -20, 30, 5);
+                ctx.fillStyle = '#ffd700';
                 ctx.fillRect(-3, -20, 6, 5);
-                
+
                 // Head
-                ctx.fillStyle = '#fff'; 
-                ctx.beginPath(); 
-                ctx.arc(8, -32, 12, 0, Math.PI * 2); 
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.arc(8, -32, 12, 0, Math.PI * 2);
                 ctx.fill();
-                
+
                 // Face
-                ctx.fillStyle = '#ffdbac'; 
-                ctx.beginPath(); 
-                ctx.arc(10, -35, 6, 0, Math.PI * 2); 
+                ctx.fillStyle = '#ffdbac';
+                ctx.beginPath();
+                ctx.arc(10, -35, 6, 0, Math.PI * 2);
                 ctx.fill();
-                
+
                 // Eyes
                 ctx.fillStyle = '#111';
                 ctx.beginPath();
                 ctx.arc(8, -36, 1.5, 0, Math.PI * 2);
                 ctx.arc(12, -36, 1.5, 0, Math.PI * 2);
                 ctx.fill();
-                
+
                 // Hat
-                ctx.fillStyle = '#d42426'; 
-                ctx.beginPath(); 
-                ctx.moveTo(0, -42); 
-                ctx.lineTo(15, -42); 
-                ctx.lineTo(5, -55); 
+                ctx.fillStyle = '#d42426';
+                ctx.beginPath();
+                ctx.moveTo(0, -42);
+                ctx.lineTo(15, -42);
+                ctx.lineTo(5, -55);
                 ctx.fill();
-                ctx.fillStyle = '#fff'; 
-                ctx.beginPath(); 
-                ctx.arc(5, -55, 4, 0, Math.PI * 2); 
-                ctx.fill(); 
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.arc(5, -55, 4, 0, Math.PI * 2);
+                ctx.fill();
                 ctx.fillRect(0, -44, 16, 4);
 
                 // Legs
-                ctx.fillStyle = '#111'; 
+                ctx.fillStyle = '#111';
                 const s = state === 'walking' ? Math.sin(animTime * 10) * 10 : 0;
-                ctx.fillRect(-10 + s, -5, 8, 8); 
+                ctx.fillRect(-10 + s, -5, 8, 8);
                 ctx.fillRect(2 - s, -5, 8, 8);
-                
+
                 ctx.restore();
             }
 
             static drawPlatform(ctx, x, y, w, h, slippery) {
                 const grad = ctx.createLinearGradient(x, y, x, y + h);
-                grad.addColorStop(0, slippery ? '#5dade2' : '#2c3e50'); 
+                grad.addColorStop(0, slippery ? '#5dade2' : '#2c3e50');
                 grad.addColorStop(1, slippery ? '#2980b9' : '#1a252f');
-                ctx.fillStyle = grad; 
+                ctx.fillStyle = grad;
                 ctx.fillRect(x, y, w, h);
-                
+
                 if (slippery) {
                     ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
                     ctx.fillRect(x, y, w, 5);
@@ -973,11 +984,11 @@
                         ctx.fillRect(x + i, y, 10, h);
                     }
                 }
-                
+
                 ctx.fillStyle = slippery ? '#e8f4f8' : '#fff';
-                ctx.beginPath(); 
-                ctx.moveTo(x, y); 
-                ctx.lineTo(x + w, y); 
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + w, y);
                 ctx.lineTo(x + w, y + 15);
                 for (let i = w; i >= 0; i -= 20) {
                     ctx.quadraticCurveTo(x + i - 10, y + 25, x + i - 20, y + 15);
@@ -986,35 +997,35 @@
             }
 
             static drawTree(ctx, x, y, size) {
-                ctx.save(); 
+                ctx.save();
                 ctx.translate(x, y);
-                ctx.fillStyle = '#3e2723'; 
+                ctx.fillStyle = '#3e2723';
                 ctx.fillRect(-size / 10, -size / 5, size / 5, size / 5);
                 ctx.fillStyle = '#1b5e20';
                 for (let i = 0; i < 3; i++) {
-                    const yp = -size / 5 - (i * size / 4); 
+                    const yp = -size / 5 - (i * size / 4);
                     const wd = size - (i * size / 4);
-                    ctx.beginPath(); 
-                    ctx.moveTo(-wd / 2, yp); 
-                    ctx.lineTo(wd / 2, yp); 
-                    ctx.lineTo(0, yp - size / 2); 
+                    ctx.beginPath();
+                    ctx.moveTo(-wd / 2, yp);
+                    ctx.lineTo(wd / 2, yp);
+                    ctx.lineTo(0, yp - size / 2);
                     ctx.fill();
                 }
                 ctx.restore();
             }
 
             static drawItem(ctx, x, y, type) {
-                ctx.save(); 
+                ctx.save();
                 ctx.translate(x, y);
                 if (type === 'gift') {
                     ctx.shadowBlur = 10;
                     ctx.shadowColor = '#e74c3c';
-                    ctx.fillStyle = '#e74c3c'; 
+                    ctx.fillStyle = '#e74c3c';
                     ctx.fillRect(-12, -12, 24, 24);
-                    ctx.fillStyle = '#ffd700'; 
-                    ctx.fillRect(-2, -12, 4, 24); 
+                    ctx.fillStyle = '#ffd700';
+                    ctx.fillRect(-2, -12, 4, 24);
                     ctx.fillRect(-12, -2, 24, 4);
-                    ctx.fillStyle = '#fff'; 
+                    ctx.fillStyle = '#fff';
                     ctx.beginPath();
                     ctx.arc(-5, -15, 4, 0, Math.PI * 2);
                     ctx.arc(5, -15, 4, 0, Math.PI * 2);
@@ -1022,26 +1033,26 @@
                 } else if (type === 'star') {
                     ctx.shadowBlur = 15;
                     ctx.shadowColor = '#f1c40f';
-                    ctx.fillStyle = '#f1c40f'; 
+                    ctx.fillStyle = '#f1c40f';
                     ctx.beginPath();
-                    for (let i = 0; i < 5; i++) { 
-                        ctx.lineTo(Math.cos(i * Math.PI * 2 / 5 - Math.PI / 2) * 15, Math.sin(i * Math.PI * 2 / 5 - Math.PI / 2) * 15); 
-                        ctx.lineTo(Math.cos((i + 0.5) * Math.PI * 2 / 5 - Math.PI / 2) * 7, Math.sin((i + 0.5) * Math.PI * 2 / 5 - Math.PI / 2) * 7); 
+                    for (let i = 0; i < 5; i++) {
+                        ctx.lineTo(Math.cos(i * Math.PI * 2 / 5 - Math.PI / 2) * 15, Math.sin(i * Math.PI * 2 / 5 - Math.PI / 2) * 15);
+                        ctx.lineTo(Math.cos((i + 0.5) * Math.PI * 2 / 5 - Math.PI / 2) * 7, Math.sin((i + 0.5) * Math.PI * 2 / 5 - Math.PI / 2) * 7);
                     }
                     ctx.fill();
                 } else if (type === 'bell') {
                     ctx.shadowBlur = 10;
                     ctx.shadowColor = '#ffd700';
-                    ctx.fillStyle = '#ffd700'; 
-                    ctx.beginPath(); 
-                    ctx.arc(0, 0, 12, Math.PI, 0); 
-                    ctx.lineTo(12, 10); 
-                    ctx.lineTo(-12, 10); 
-                    ctx.closePath(); 
+                    ctx.fillStyle = '#ffd700';
+                    ctx.beginPath();
+                    ctx.arc(0, 0, 12, Math.PI, 0);
+                    ctx.lineTo(12, 10);
+                    ctx.lineTo(-12, 10);
+                    ctx.closePath();
                     ctx.fill();
                     ctx.fillStyle = '#d4af37';
-                    ctx.beginPath(); 
-                    ctx.arc(0, 10, 4, 0, Math.PI * 2); 
+                    ctx.beginPath();
+                    ctx.arc(0, 10, 4, 0, Math.PI * 2);
                     ctx.fill();
                 }
                 ctx.restore();
@@ -1051,7 +1062,7 @@
                 ctx.save();
                 ctx.translate(x, y);
                 ctx.shadowBlur = 20;
-                
+
                 if (type === 'speed') {
                     ctx.shadowColor = '#ff6b00';
                     ctx.fillStyle = '#ff6b00';
@@ -1103,38 +1114,38 @@
                     ctx.textBaseline = 'middle';
                     ctx.fillText('❄️', 0, 0);
                 }
-                
+
                 ctx.restore();
             }
 
             static drawSnowman(ctx, x, y, size, frozen) {
-                ctx.save(); 
+                ctx.save();
                 ctx.translate(x, y);
-                if (frozen) { 
-                    ctx.shadowBlur = 20; 
-                    ctx.shadowColor = '#00d2ff'; 
-                    ctx.globalAlpha = 0.6; 
+                if (frozen) {
+                    ctx.shadowBlur = 20;
+                    ctx.shadowColor = '#00d2ff';
+                    ctx.globalAlpha = 0.6;
                 }
-                ctx.fillStyle = '#fff'; 
-                ctx.beginPath(); 
-                ctx.arc(0, -size / 3, size / 3, 0, Math.PI * 2); 
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.arc(0, -size / 3, size / 3, 0, Math.PI * 2);
                 ctx.fill();
-                ctx.beginPath(); 
-                ctx.arc(0, -size * 0.7, size / 4, 0, Math.PI * 2); 
+                ctx.beginPath();
+                ctx.arc(0, -size * 0.7, size / 4, 0, Math.PI * 2);
                 ctx.fill();
-                ctx.beginPath(); 
-                ctx.arc(0, -size * 0.95, size / 6, 0, Math.PI * 2); 
+                ctx.beginPath();
+                ctx.arc(0, -size * 0.95, size / 6, 0, Math.PI * 2);
                 ctx.fill();
-                
+
                 if (!frozen) {
                     ctx.fillStyle = '#111';
-                    ctx.beginPath(); 
-                    ctx.arc(-4, -size * 0.98, 2, 0, Math.PI * 2); 
+                    ctx.beginPath();
+                    ctx.arc(-4, -size * 0.98, 2, 0, Math.PI * 2);
                     ctx.fill();
-                    ctx.beginPath(); 
-                    ctx.arc(4, -size * 0.98, 2, 0, Math.PI * 2); 
+                    ctx.beginPath();
+                    ctx.arc(4, -size * 0.98, 2, 0, Math.PI * 2);
                     ctx.fill();
-                    
+
                     // Carrot nose
                     ctx.fillStyle = '#ff6b00';
                     ctx.beginPath();
@@ -1143,64 +1154,64 @@
                     ctx.lineTo(4, -size * 0.92);
                     ctx.fill();
                 }
-                
+
                 ctx.restore();
             }
 
             static drawCabin(ctx, x, y, glowing) {
-                ctx.save(); 
+                ctx.save();
                 ctx.translate(x, y);
-                
+
                 if (glowing) {
                     ctx.shadowBlur = 30;
                     ctx.shadowColor = '#ffd700';
                 }
-                
-                ctx.fillStyle = '#5d4037'; 
+
+                ctx.fillStyle = '#5d4037';
                 ctx.fillRect(-40, -60, 80, 60);
-                ctx.fillStyle = '#3e2723'; 
+                ctx.fillStyle = '#3e2723';
                 ctx.fillRect(-10, -30, 20, 30);
                 ctx.fillStyle = '#ffd700';
                 ctx.beginPath();
                 ctx.arc(5, -15, 2, 0, Math.PI * 2);
                 ctx.fill();
-                
-                ctx.fillStyle = glowing ? '#fff9c4' : '#8d6e63'; 
+
+                ctx.fillStyle = glowing ? '#fff9c4' : '#8d6e63';
                 ctx.shadowBlur = glowing ? 15 : 0;
                 ctx.shadowColor = '#fff9c4';
-                ctx.fillRect(-30, -45, 15, 15); 
+                ctx.fillRect(-30, -45, 15, 15);
                 ctx.fillRect(15, -45, 15, 15);
                 ctx.shadowBlur = 0;
-                
-                ctx.fillStyle = '#d42426'; 
-                ctx.beginPath(); 
-                ctx.moveTo(-50, -60); 
-                ctx.lineTo(50, -60); 
-                ctx.lineTo(0, -100); 
-                ctx.closePath(); 
+
+                ctx.fillStyle = '#d42426';
+                ctx.beginPath();
+                ctx.moveTo(-50, -60);
+                ctx.lineTo(50, -60);
+                ctx.lineTo(0, -100);
+                ctx.closePath();
                 ctx.fill();
-                
-                ctx.fillStyle = '#fff'; 
-                ctx.beginPath(); 
-                ctx.moveTo(-50, -60); 
-                ctx.lineTo(50, -60); 
-                ctx.lineTo(40, -65); 
-                ctx.lineTo(-40, -65); 
-                ctx.closePath(); 
+
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.moveTo(-50, -60);
+                ctx.lineTo(50, -60);
+                ctx.lineTo(40, -65);
+                ctx.lineTo(-40, -65);
+                ctx.closePath();
                 ctx.fill();
-                
+
                 ctx.fillStyle = '#8b4513';
                 ctx.fillRect(20, -90, 15, 30);
                 ctx.fillStyle = '#fff';
                 ctx.fillRect(20, -92, 15, 4);
-                
+
                 ctx.restore();
             }
 
             static drawBackground(ctx, cam, level) {
                 ctx.save();
                 ctx.globalAlpha = 0.2;
-                
+
                 ctx.fillStyle = '#1a3a52';
                 for (let i = 0; i < 5; i++) {
                     const x = i * 400 - (cam.x * 0.1);
@@ -1212,13 +1223,13 @@
                     ctx.closePath();
                     ctx.fill();
                 }
-                
+
                 ctx.globalAlpha = 0.3;
                 for (let i = 0; i < 15; i++) {
                     const x = i * 200 - (cam.x * 0.2);
                     Renderer.drawTree(ctx, x, 520, 80);
                 }
-                
+
                 ctx.restore();
             }
         }
@@ -1226,15 +1237,15 @@
         // --- LOGIC ---
         class Input {
             constructor() {
-                this.keys = {}; 
+                this.keys = {};
                 this.pressed = {};
-                
-                window.addEventListener('keydown', e => { 
+
+                window.addEventListener('keydown', e => {
                     if (!this.keys[e.code]) {
                         this.pressed[e.code] = true;
                     }
-                    this.keys[e.code] = true; 
-                    audio.init(); 
+                    this.keys[e.code] = true;
+                    audio.init();
                 });
                 window.addEventListener('keyup', e => {
                     this.keys[e.code] = false;
@@ -1245,29 +1256,28 @@
                     document.body.classList.add('touch-device');
                     document.getElementById('touch-controls').style.display = 'block';
                     const b = (id, k) => {
-                        const btn = document.getElementById(id); 
-                        btn.addEventListener('touchstart', (e) => { 
-                            e.preventDefault(); 
-                            this.keys[k] = true; 
+                        const btn = document.getElementById(id);
+                        btn.addEventListener('touchstart', (e) => {
+                            e.preventDefault();
+                            this.keys[k] = true;
                             this.pressed[k] = true;
-                            audio.init(); 
+                            audio.init();
                         });
-                        btn.addEventListener('touchend', (e) => { 
-                            e.preventDefault(); 
-                            this.keys[k] = false; 
+                        btn.addEventListener('touchend', (e) => {
+                            e.preventDefault();
+                            this.keys[k] = false;
                             this.pressed[k] = false;
                         });
                     };
-                    b('btn-left', 'ArrowLeft'); 
-                    b('btn-right', 'ArrowRight'); 
-                    b('btn-jump', 'Space'); 
+                    b('btn-left', 'ArrowLeft');
+                    b('btn-right', 'ArrowRight');
+                    b('btn-jump', 'Space');
                     b('btn-shoot', 'KeyX');
-                    b('btn-magic', 'KeyC');
                 }
             }
-            
+
             isPressed(k) { return this.keys[k]; }
-            
+
             justPressed(k) {
                 const result = this.pressed[k];
                 this.pressed[k] = false;
@@ -1283,22 +1293,20 @@
             reset(x, y) {
                 this.x = x; this.y = y; this.w = 30; this.h = 50; this.vx = 0; this.vy = 0;
                 this.dir = 1; this.state = 'idle'; this.animT = 0; this.onG = false;
-                this.snowballs = []; this.shootCd = 0; this.magic = 0;
+                this.snowballs = []; this.shootCd = 0;
                 this.health = 3; this.invincible = 0;
                 this.combo = 0; this.comboTimer = 0;
-                this.powerActive = false; this.powerTime = 0;
                 this.hasDoubleJump = true; this.hasUsedDoubleJump = false;
                 this.speedBoost = 0; this.hasShield = 0;
-                this.levelPowerUses = 0;
                 this.levelDamageTaken = 0;
             }
-            
+
             update(input, world, particles, achievements) {
                 if (!world || !world.platforms) return; // Safety check
-                
+
                 let speed = MOVE_SPEED, max = MAX_SPEED;
                 let friction = FRICTION;
-                
+
                 // Check if on slippery platform
                 if (this.onG) {
                     for (const p of world.platforms) {
@@ -1311,16 +1319,6 @@
                 }
 
                 // Power-ups
-                if (this.powerActive) {
-                    speed *= 1.5;
-                    max *= 1.5;
-                    this.powerTime--;
-                    if (this.powerTime <= 0) {
-                        this.powerActive = false;
-                        document.getElementById('power-indicator').classList.remove('show');
-                    }
-                }
-
                 if (this.speedBoost > 0) {
                     speed *= 2;
                     max *= 2;
@@ -1334,19 +1332,19 @@
                     this.hasShield--;
                 }
 
-                if (input.isPressed('ArrowLeft')) { 
-                    this.vx -= speed; this.dir = -1; this.state = 'walking'; 
+                if (input.isPressed('ArrowLeft')) {
+                    this.vx -= speed; this.dir = -1; this.state = 'walking';
                 }
-                else if (input.isPressed('ArrowRight')) { 
-                    this.vx += speed; this.dir = 1; this.state = 'walking'; 
+                else if (input.isPressed('ArrowRight')) {
+                    this.vx += speed; this.dir = 1; this.state = 'walking';
                 }
-                else { 
-                    this.vx *= friction; 
-                    if (Math.abs(this.vx) < 0.1) this.state = 'idle'; 
+                else {
+                    this.vx *= friction;
+                    if (Math.abs(this.vx) < 0.1) this.state = 'idle';
                 }
 
                 if (Math.abs(this.vx) > max) this.vx = Math.sign(this.vx) * max;
-                
+
                 // Jump with double jump
                 if (input.justPressed('Space') || input.justPressed('ArrowUp')) {
                     if (this.onG) {
@@ -1357,7 +1355,7 @@
                         this.vy = DOUBLE_JUMP_FORCE;
                         this.hasUsedDoubleJump = true;
                         audio.playSfx('jump', 1.3);
-                        particles.emit(this.x + 15, this.y + 50, 'magic', 10);
+                        particles.emit(this.x + 15, this.y + 50, 'speed', 10);
                     }
                 }
 
@@ -1367,35 +1365,23 @@
                 } else {
                     document.getElementById('jump-indicator').classList.remove('show');
                 }
-                
-                // Magic power activation
-                if (input.justPressed('KeyC') && this.magic >= 100 && !this.powerActive) {
-                    this.powerActive = true;
-                    this.powerTime = 300;
-                    this.magic = 0;
-                    this.levelPowerUses++;
-                    audio.playSfx('power');
-                    document.getElementById('power-indicator').classList.add('show');
-                    particles.emit(this.x + 15, this.y + 25, 'magic', 20);
-                    
-                    if (this.levelPowerUses >= 3) {
-                        achievements.unlock('power_user');
-                    }
-                }
-                
-                if (input.justPressed('KeyX') && this.shootCd <= 0) {
-                    const snowSize = this.powerActive ? 10 : 5;
-                    const snowSpeed = this.powerActive ? 15 : 10;
-                    this.snowballs.push({ 
-                        x: this.x + 15, 
-                        y: this.y + 25, 
-                        vx: this.dir * snowSpeed, 
-                        vy: -2, 
+
+                // Combat
+                const shootPressed = input.justPressed('KeyX');
+
+                if (shootPressed && this.shootCd <= 0) {
+                    const snowSize = 5;
+                    const snowSpeed = 10;
+                    this.snowballs.push({
+                        x: this.x + 15,
+                        y: this.y + 25,
+                        vx: this.dir * snowSpeed,
+                        vy: -2,
                         life: 60,
                         size: snowSize,
-                        powered: this.powerActive
+                        powered: false
                     });
-                    this.shootCd = this.powerActive ? 10 : 20; 
+                    this.shootCd = 20;
                     audio.playSfx('shoot');
                 }
 
@@ -1405,50 +1391,49 @@
                     this.comboTimer--;
                     if (this.comboTimer === 0) this.combo = 0;
                 }
-                
-                this.vy += GRAVITY; 
-                this.x += this.vx; 
-                this.collide(world, 'x'); 
-                this.y += this.vy; 
+
+                this.vy += GRAVITY;
+                this.x += this.vx;
+                this.collide(world, 'x');
+                this.y += this.vy;
                 this.collide(world, 'y');
-                
+
                 if (!this.onG) this.state = 'jumping';
                 this.animT += 0.016;
-                
-                this.snowballs = this.snowballs.filter(s => { 
-                    s.x += s.vx; 
-                    s.y += s.vy; 
-                    s.vy += 0.2; 
-                    s.life--; 
-                    return s.life > 0 && s.y < 800; 
+
+                this.snowballs = this.snowballs.filter(s => {
+                    s.x += s.vx;
+                    s.y += s.vy;
+                    s.vy += 0.2;
+                    s.life--;
+                    return s.life > 0 && s.y < 800;
                 });
-                
-                if (this.magic > 0) this.magic -= 0.02;
-                document.getElementById('magic-bar').style.width = Math.min(100, this.magic) + '%';
+
+
             }
-            
+
             collide(world, axis) {
                 if (axis === 'y') this.onG = false;
                 for (const p of world.platforms) {
                     if (this.x < p.x + p.w && this.x + this.w > p.x && this.y < p.y + p.h && this.y + this.h > p.y) {
-                        if (axis === 'x') { 
-                            this.x = this.vx > 0 ? p.x - this.w : p.x + p.w; 
-                            this.vx = 0; 
+                        if (axis === 'x') {
+                            this.x = this.vx > 0 ? p.x - this.w : p.x + p.w;
+                            this.vx = 0;
                         }
-                        else { 
-                            if (this.vy > 0) { 
-                                this.y = p.y - this.h; 
-                                this.onG = true; 
-                                this.vy = 0; 
-                            } else { 
-                                this.y = p.y + p.h; 
-                                this.vy = 0; 
-                            } 
+                        else {
+                            if (this.vy > 0) {
+                                this.y = p.y - this.h;
+                                this.onG = true;
+                                this.vy = 0;
+                            } else {
+                                this.y = p.y + p.h;
+                                this.vy = 0;
+                            }
                         }
                     }
                 }
             }
-            
+
             takeDamage() {
                 if (this.invincible > 0) return false;
                 if (this.hasShield > 0) {
@@ -1456,33 +1441,33 @@
                     audio.playSfx('power');
                     return false;
                 }
-                
+
                 this.health--;
                 this.invincible = 120;
                 this.levelDamageTaken++;
                 audio.playSfx('hurt');
-                
+
                 const hearts = document.querySelectorAll('.heart');
                 if (hearts[this.health]) {
                     hearts[this.health].classList.add('lost');
                 }
-                
+
                 return this.health <= 0;
             }
-            
+
             addScore(points, particles, x, y) {
                 this.combo++;
                 this.comboTimer = COMBO_TIMEOUT / 16.67;
-                
+
                 const multiplier = Math.min(this.combo, 5);
                 const finalPoints = points * multiplier;
-                
+
                 const scoreEl = document.getElementById('score');
                 const currentScore = parseInt(scoreEl.innerText);
                 scoreEl.innerText = currentScore + finalPoints;
                 scoreEl.classList.add('score-pulse');
                 setTimeout(() => scoreEl.classList.remove('score-pulse'), 400);
-                
+
                 if (this.combo >= 3) {
                     const comboEl = document.getElementById('combo-display');
                     comboEl.innerText = `COMBO x${this.combo}!`;
@@ -1491,52 +1476,52 @@
                     comboEl.classList.add('show');
                     setTimeout(() => comboEl.classList.remove('show'), 1000);
                 }
-                
+
                 particles.emit(x, y, 'collect', 10);
-                
+
                 return currentScore + finalPoints;
             }
         }
 
         class Game {
             constructor() {
-                this.canvas = document.getElementById('gameCanvas'); 
+                this.canvas = document.getElementById('gameCanvas');
                 this.ctx = this.canvas.getContext('2d');
-                this.canvas.width = 800; 
+                this.canvas.width = 800;
                 this.canvas.height = 600;
-                
+
                 // Speed lines canvas
                 this.speedCanvas = document.getElementById('speedCanvas');
                 this.speedCtx = this.speedCanvas.getContext('2d');
-                
-                this.input = new Input(); 
+
+                this.input = new Input();
                 this.player = new Player(100, 400);
                 this.particles = new ParticleSystem();
                 this.achievements = new AchievementSystem();
                 this.cam = { x: 0, y: 0, z: 1 };
-                this.score = 0; 
-                this.level = 0; 
-                this.won = false; 
+                this.score = 0;
+                this.level = 0;
+                this.won = false;
                 this.gameOver = false;
                 this.snowParticles = [];
                 this.gameStarted = false;
                 this.levelStartTime = 0;
                 this.totalTime = 0;
-                
+
                 this.levels = [
                     {
                         name: 'SNOW VILLAGE',
                         platforms: [
-                            { x: 0, y: 550, w: 2000, h: 50 }, 
-                            { x: 400, y: 400, w: 200, h: 30 }, 
-                            { x: 700, y: 250, w: 200, h: 30 }, 
-                            { x: 1100, y: 400, w: 300, h: 30 }, 
+                            { x: 0, y: 550, w: 2000, h: 50 },
+                            { x: 400, y: 400, w: 200, h: 30 },
+                            { x: 700, y: 250, w: 200, h: 30 },
+                            { x: 1100, y: 400, w: 300, h: 30 },
                             { x: 1500, y: 300, w: 200, h: 30 }
                         ],
                         items: [
-                            { x: 450, y: 350, t: 'gift' }, 
-                            { x: 750, y: 200, t: 'star' }, 
-                            { x: 1200, y: 350, t: 'bell' }, 
+                            { x: 450, y: 350, t: 'star' },
+                            { x: 750, y: 200, t: 'star' },
+                            { x: 1200, y: 350, t: 'bell' },
                             { x: 1600, y: 250, t: 'gift' }
                         ],
                         powerups: [
@@ -1544,7 +1529,7 @@
                             { x: 1350, y: 350, t: 'shield' }
                         ],
                         enemies: [
-                            { x: 600, y: 500, v: -1.5, f: 0 }, 
+                            { x: 600, y: 500, v: -1.5, f: 0 },
                             { x: 1300, y: 500, v: -1.5, f: 0 }
                         ],
                         goal: { x: 1800, y: 550 }
@@ -1552,15 +1537,15 @@
                     {
                         name: 'FROZEN LAKE',
                         platforms: [
-                            { x: 0, y: 550, w: 3000, h: 50, s: true }, 
-                            { x: 500, y: 450, w: 300, h: 30, s: true }, 
-                            { x: 900, y: 350, w: 300, h: 30, s: true }, 
-                            { x: 1300, y: 250, w: 300, h: 30, s: true }, 
+                            { x: 0, y: 550, w: 3000, h: 50, s: true },
+                            { x: 500, y: 450, w: 300, h: 30, s: true },
+                            { x: 900, y: 350, w: 300, h: 30, s: true },
+                            { x: 1300, y: 250, w: 300, h: 30, s: true },
                             { x: 1800, y: 400, w: 500, h: 30, s: true }
                         ],
                         items: [
-                            { x: 550, y: 400, t: 'gift' }, 
-                            { x: 950, y: 300, t: 'star' }, 
+                            { x: 550, y: 400, t: 'gift' },
+                            { x: 950, y: 300, t: 'star' },
                             { x: 1100, y: 300, t: 'bell' },
                             { x: 1500, y: 200, t: 'star' },
                             { x: 2000, y: 350, t: 'gift' }
@@ -1571,8 +1556,8 @@
                             { x: 2100, y: 350, t: 'shield' }
                         ],
                         enemies: [
-                            { x: 800, y: 500, v: -2, f: 0 }, 
-                            { x: 1600, y: 500, v: -2, f: 0 }, 
+                            { x: 800, y: 500, v: -2, f: 0 },
+                            { x: 1600, y: 500, v: -2, f: 0 },
                             { x: 2200, y: 500, v: -2, f: 0 }
                         ],
                         goal: { x: 2700, y: 550 }
@@ -1580,18 +1565,18 @@
                     {
                         name: 'XMAS FOREST',
                         platforms: [
-                            { x: 0, y: 550, w: 400, h: 50 }, 
-                            { x: 300, y: 450, w: 150, h: 30 }, 
-                            { x: 150, y: 350, w: 150, h: 30 }, 
-                            { x: 350, y: 250, w: 150, h: 30 }, 
-                            { x: 600, y: 200, w: 200, h: 30 }, 
-                            { x: 900, y: 300, w: 200, h: 30 }, 
+                            { x: 0, y: 550, w: 400, h: 50 },
+                            { x: 300, y: 450, w: 150, h: 30 },
+                            { x: 150, y: 350, w: 150, h: 30 },
+                            { x: 350, y: 250, w: 150, h: 30 },
+                            { x: 600, y: 200, w: 200, h: 30 },
+                            { x: 900, y: 300, w: 200, h: 30 },
                             { x: 1200, y: 400, w: 1000, h: 30 }
                         ],
                         items: [
-                            { x: 360, y: 200, t: 'star' }, 
+                            { x: 360, y: 200, t: 'star' },
                             { x: 650, y: 150, t: 'bell' },
-                            { x: 950, y: 250, t: 'gift' }, 
+                            { x: 950, y: 250, t: 'gift' },
                             { x: 1500, y: 350, t: 'star' },
                             { x: 1800, y: 350, t: 'bell' }
                         ],
@@ -1601,17 +1586,17 @@
                             { x: 1600, y: 350, t: 'freeze' }
                         ],
                         enemies: [
-                            { x: 1300, y: 350, v: -2, f: 0 }, 
+                            { x: 1300, y: 350, v: -2, f: 0 },
                             { x: 1700, y: 350, v: -2, f: 0 },
                             { x: 1900, y: 350, v: -1.5, f: 0 }
                         ],
                         goal: { x: 2000, y: 400 }
                     }
                 ];
-                
+
                 // Initialize world with first level to prevent undefined errors
                 this.world = this.levels[0];
-                
+
                 requestAnimationFrame(t => this.loop());
             }
 
@@ -1627,16 +1612,16 @@
                 this.achievements.unlocked.clear();
                 this.loadLevel(0);
             }
-            
+
             loadLevel(i) {
-                this.level = i; 
+                this.level = i;
                 this.world = this.levels[i];
                 this.player.reset(100, 400);
                 this.player.invincible = 60;
                 this.levelStartTime = Date.now();
-                
+
                 document.querySelectorAll('.heart').forEach(h => h.classList.remove('lost'));
-                
+
                 document.getElementById('level-name').innerText = this.world.name;
                 document.getElementById('level-num').innerText = i + 1;
             }
@@ -1647,16 +1632,16 @@
                 const secs = seconds % 60;
                 return `${minutes}:${secs.toString().padStart(2, '0')}`;
             }
-            
+
             update() {
                 if (!this.gameStarted || this.won || this.gameOver) {
                     // Draw speed lines even when paused
-                    if (this.player.speedBoost > 0 || this.player.powerActive) {
+                    if (this.player.speedBoost > 0) {
                         this.drawSpeedLines();
                     }
                     return;
                 }
-                
+
                 this.player.update(this.input, this.world, this.particles, this.achievements);
                 this.particles.update();
 
@@ -1664,7 +1649,7 @@
                 const levelTime = Date.now() - this.levelStartTime;
                 const timerEl = document.getElementById('timer-display');
                 timerEl.innerText = '⏱️ ' + this.formatTime(levelTime);
-                
+
                 // Warning at 60 seconds
                 if (levelTime > 60000) {
                     timerEl.classList.add('warning');
@@ -1683,7 +1668,7 @@
                 if (this.cam.x < 0) this.cam.x = 0;
 
                 // Fall Death
-                if (this.player.y > 800) { 
+                if (this.player.y > 800) {
                     if (this.player.takeDamage()) {
                         this.gameOver = true;
                         document.getElementById('game-over-screen').style.display = 'flex';
@@ -1695,7 +1680,7 @@
                         this.player.vx = 0;
                         this.player.vy = 0;
                     }
-                    return; 
+                    return;
                 }
 
                 // Item Collection
@@ -1704,15 +1689,19 @@
                     if (!it.c) {
                         allItemsCollected = false;
                         if (Math.abs(this.player.x - it.x) < 40 && Math.abs(this.player.y - it.y) < 60) {
-                            it.c = true; 
-                            
+                            it.c = true;
+
                             let points = 100;
-                            if (it.t === 'bell') points = 500;
-                            if (it.t === 'star') {
-                                this.player.magic = Math.min(100, this.player.magic + 50);
-                                points = 300;
+                            if (it.t === 'bell') {
+                                points = 500;
                             }
-                            
+                            if (it.t === 'gift') {
+                                points = 200;
+                            }
+                            if (it.t === 'star') {
+                                points = 500;
+                            }
+
                             this.score = this.player.addScore(points, this.particles, it.x, it.y);
                             audio.playSfx('collect', 1 + this.player.combo * 0.1);
 
@@ -1729,7 +1718,7 @@
                         pu.c = true;
                         audio.playSfx('powerup');
                         this.particles.emit(pu.x, pu.y, pu.t, 20);
-                        
+
                         if (pu.t === 'speed') {
                             this.player.speedBoost = 300; // 5 seconds
                         } else if (pu.t === 'shield') {
@@ -1746,17 +1735,17 @@
                     if (e.f > 0) {
                         e.f--;
                     } else {
-                        e.x += e.v; 
+                        e.x += e.v;
                         let g = false;
                         for (const p of this.world.platforms) {
-                            if (e.x < p.x + p.w && e.x + 40 > p.x && e.y + 50 > p.y && e.y + 50 < p.y + 10) { 
-                                e.y = p.y - 50; 
-                                g = true; 
-                                break; 
+                            if (e.x < p.x + p.w && e.x + 40 > p.x && e.y + 50 > p.y && e.y + 50 < p.y + 10) {
+                                e.y = p.y - 50;
+                                g = true;
+                                break;
                             }
                         }
                         if (!g || e.x < 0 || e.x > this.world.goal.x + 200) e.v *= -1;
-                        
+
                         if (Math.abs(this.player.x - e.x) < 50 && Math.abs(this.player.y - e.y) < 70) {
                             if (this.player.takeDamage()) {
                                 this.gameOver = true;
@@ -1770,18 +1759,18 @@
                             }
                         }
                     }
-                    
-                    this.player.snowballs.forEach(s => { 
-                        if (Math.abs(s.x - (e.x + 20)) < 30 && Math.abs(s.y - (e.y + 30)) < 30) { 
+
+                    this.player.snowballs.forEach(s => {
+                        if (Math.abs(s.x - (e.x + 20)) < 30 && Math.abs(s.y - (e.y + 30)) < 30) {
                             if (!e.killed) {
                                 e.killed = true;
                                 firstKill = true;
                             }
-                            e.f = 300; 
+                            e.f = 300;
                             s.life = 0;
                             this.score = this.player.addScore(200, this.particles, e.x + 20, e.y + 30);
-                            this.particles.emit(e.x + 20, e.y + 30, 'magic', 15);
-                        } 
+                            this.particles.emit(e.x + 20, e.y + 30, 'collect', 15);
+                        }
                     });
                 });
 
@@ -1789,12 +1778,12 @@
 
                 // Snow particles
                 if (Math.random() < 0.3) {
-                    this.snowParticles.push({ 
-                        x: Math.random() * 1000 + this.cam.x - 100, 
-                        y: this.cam.y - 100, 
-                        vy: Math.random() * 2 + 1, 
+                    this.snowParticles.push({
+                        x: Math.random() * 1000 + this.cam.x - 100,
+                        y: this.cam.y - 100,
+                        vy: Math.random() * 2 + 1,
                         vx: Math.random() * 0.5 - 0.25,
-                        s: Math.random() * 3 + 1 
+                        s: Math.random() * 3 + 1
                     });
                 }
                 this.snowParticles.forEach(p => {
@@ -1837,12 +1826,12 @@
                 document.getElementById('victory-screen').style.display = 'flex';
                 document.getElementById('final-score').innerText = this.score;
                 document.getElementById('final-time').innerText = this.formatTime(this.totalTime);
-                
+
                 // Time bonus
                 const targetTime = 90000; // 1:30 per level * 3
                 if (this.totalTime < targetTime) {
                     const bonus = Math.floor((targetTime - this.totalTime) / 100);
-                    document.getElementById('time-bonus').innerHTML = 
+                    document.getElementById('time-bonus').innerHTML =
                         `<div style="color: #00d2ff; margin-top: 10px;">⚡ TIME BONUS: +${bonus} pts</div>`;
                     this.score += bonus;
                     document.getElementById('final-score').innerText = this.score;
@@ -1866,10 +1855,10 @@
             drawSpeedLines() {
                 const ctx = this.speedCtx;
                 ctx.clearRect(0, 0, 800, 600);
-                
+
                 ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
                 ctx.lineWidth = 2;
-                
+
                 for (let i = 0; i < 10; i++) {
                     const y = (Date.now() / 20 + i * 60) % 600;
                     const offset = Math.sin(y / 100) * 50;
@@ -1877,20 +1866,20 @@
                     ctx.moveTo(0, y);
                     ctx.lineTo(100 + offset, y);
                     ctx.stroke();
-                    
+
                     ctx.beginPath();
                     ctx.moveTo(800, y);
                     ctx.lineTo(700 + offset, y);
                     ctx.stroke();
                 }
             }
-            
+
             render() {
-                const ctx = this.ctx; 
+                const ctx = this.ctx;
                 ctx.clearRect(0, 0, 800, 600);
-                
+
                 if (!this.world) return; // Safety check
-                
+
                 ctx.save();
                 ctx.translate(400, 300);
                 ctx.scale(this.cam.z, this.cam.z);
@@ -1899,25 +1888,25 @@
                 Renderer.drawBackground(ctx, this.cam, this.level);
 
                 this.world.platforms.forEach(p => Renderer.drawPlatform(ctx, p.x, p.y, p.w, p.h, p.s));
-                
-                this.world.items.forEach(it => { 
-                    if (!it.c) Renderer.drawItem(ctx, it.x, it.y + Math.sin(Date.now() / 200 + it.x) * 5, it.t); 
+
+                this.world.items.forEach(it => {
+                    if (!it.c) Renderer.drawItem(ctx, it.x, it.y + Math.sin(Date.now() / 200 + it.x) * 5, it.t);
                 });
 
                 this.world.powerups.forEach(pu => {
                     if (!pu.c) Renderer.drawPowerup(ctx, pu.x, pu.y + Math.sin(Date.now() / 300 + pu.x) * 8, pu.t);
                 });
-                
+
                 this.world.enemies.forEach(e => Renderer.drawSnowman(ctx, e.x + 20, e.y + 50, 50, e.f > 0));
-                
-                this.player.snowballs.forEach(s => { 
+
+                this.player.snowballs.forEach(s => {
                     ctx.save();
-                    ctx.fillStyle = s.powered ? '#00d2ff' : '#fff'; 
-                    ctx.shadowBlur = s.powered ? 15 : 5;
-                    ctx.shadowColor = s.powered ? '#00d2ff' : '#fff';
-                    ctx.beginPath(); 
-                    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2); 
-                    ctx.fill(); 
+                    ctx.fillStyle = '#fff';
+                    ctx.shadowBlur = 5;
+                    ctx.shadowColor = '#fff';
+                    ctx.beginPath();
+                    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                    ctx.fill();
                     ctx.restore();
                 });
 
@@ -1925,40 +1914,39 @@
                 Renderer.drawCabin(ctx, this.world.goal.x, this.world.goal.y, distToGoal < 150);
 
                 if (this.player.invincible === 0 || Math.floor(this.player.invincible / 5) % 2 === 0) {
-                    Renderer.drawSanta(ctx, this.player.x + 15, this.player.y + 50, this.player.dir, 
-                                     this.player.state, this.player.animT, this.player.magic, 
-                                     this.player.powerActive, this.player.hasShield > 0);
+                    Renderer.drawSanta(ctx, this.player.x + 15, this.player.y + 50, this.player.dir,
+                        this.player.state, this.player.animT, this.player.hasShield > 0);
                 }
-                
+
                 this.particles.render(ctx, this.cam);
-                
+
                 ctx.restore();
 
                 // Snow overlay
-                ctx.fillStyle = '#fff'; 
+                ctx.fillStyle = '#fff';
                 this.snowParticles.forEach(p => {
                     const screenX = (p.x - this.cam.x) * this.cam.z + 400;
                     const screenY = (p.y - this.cam.y) * this.cam.z + 300;
                     ctx.globalAlpha = 0.7;
-                    ctx.beginPath(); 
-                    ctx.arc(screenX, screenY, p.s * this.cam.z, 0, Math.PI * 2); 
+                    ctx.beginPath();
+                    ctx.arc(screenX, screenY, p.s * this.cam.z, 0, Math.PI * 2);
                     ctx.fill();
                 });
                 ctx.globalAlpha = 1;
 
                 // Speed lines
-                if (this.player.speedBoost > 0 || this.player.powerActive) {
+                if (this.player.speedBoost > 0) {
                     this.drawSpeedLines();
                 }
             }
-            
-            loop() { 
-                this.update(); 
-                this.render(); 
-                requestAnimationFrame(t => this.loop()); 
+
+            loop() {
+                this.update();
+                this.render();
+                requestAnimationFrame(t => this.loop());
             }
         }
-        
+
         let game;
         window.onload = () => {
             game = new Game();
@@ -1971,14 +1959,14 @@
                     if (gameContainer.requestFullscreen) gameContainer.requestFullscreen();
                     else if (gameContainer.webkitRequestFullscreen) gameContainer.webkitRequestFullscreen();
                     else if (gameContainer.msRequestFullscreen) gameContainer.msRequestFullscreen();
-                } catch (_) {}
+                } catch (_) { }
             };
             const exitFS = () => {
                 try {
                     if (document.exitFullscreen) document.exitFullscreen();
                     else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
                     else if (document.msExitFullscreen) document.msExitFullscreen();
-                } catch (_) {}
+                } catch (_) { }
             };
             const updateFsLabel = () => {
                 const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
